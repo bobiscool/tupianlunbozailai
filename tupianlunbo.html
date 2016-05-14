@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div {
+            left:400px;
+            top:400px;
+            border: 1px solid black;
+            width: 128px;
+            height: 128px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+
+        img {
+            float: inline;
+
+        }
+        #A {
+            position: absolute;
+            left:0px;
+            width: 128px;
+            height: 128px;
+        }
+
+        #B {
+            position: absolute;
+            left: 128px;
+            width: 128px;
+            height: 128px;
+        }
+
+        #xiaokuang {
+            width: 128px;
+            height: 20px;
+            background: #000000;
+            filter: alpha(opacity:30);
+            opacity: 0.3;
+            left: 0px;
+            top: 125px;
+            position: absolute;
+            font: white;
+        }
+
+    </style>
+
+
+    <script src="doMove.js"></script>
+    <script src="getstyle.js"></script>
+    <script src="doMove2.js"></script>
+
+
+    <script>
+
+
+
+    window.onload = function() {
+        var oA = document.getElementById('A');
+        var oB = document.getElementById('B');
+        oA.img = ['access_alarm_128px_1181621_easyicon.net.png', 'access_time_128px_1181623_easyicon.net.png'];
+        oA.txt = ['1','3'];
+        oB.txt =  ['2','4'];
+        oB.img = ['access_alarm_128px_1181622_easyicon.net.png', 'accessibility_128px_1181624_easyicon.net.png'];
+        var oBu = document.getElementsByTagName('input')[0];
+        oA.on = true;
+        oB.on = true;
+
+        oBu.onclick = function (){ //点击开始运动
+            doMove(oA,2,'left',-128);
+            doMove(oB,2,"left",-128);
+
+        }
+
+
+    }
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<div>
+    <img src="accessibility_128px_1181624_easyicon.net.png" id="A"/>
+    <img src="access_alarm_128px_1181621_easyicon.net.png" id="B"/>
+    <div id="xiaokuang"></div>
+</div>
+
+
+<input type="button" value="let's go"/>
+</body>
+</html>
